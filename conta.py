@@ -41,6 +41,14 @@ class Conta:
     def limite(self, limite):
         self.__limite = limite
 
+    @staticmethod
+    def codigo_banco():
+        return "001"
+
+    @staticmethod
+    def codigos_bancos():
+        return {'BB': '001', 'Caixa': '104', 'Bradesco': '237'}
+
 
 conta = Conta(10, "Gabriela", 70)
 conta2 = Conta(11, "Julia", 90, 2000)
@@ -63,3 +71,6 @@ conta.extrato()
 # print(conta.titular)
 # conta.limite = 6000
 # print(conta.limite)
+
+print(Conta.codigo_banco())
+print(Conta.codigos_bancos())
