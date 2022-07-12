@@ -19,6 +19,18 @@ class Conta:
         self.saca(valor)
         destino.deposita(valor)
 
+    def get_saldo(self):
+        return self.__saldo
+
+    def get_titular(self):
+        return self.__titular
+
+    def get_limite(self):
+        return self.__limite
+
+    def set_limite(self, limite):
+        self.__limite = limite
+
 
 conta = Conta(10, "Gabriela", 70)
 conta2 = Conta(11, "Julia", 90, 2000)
@@ -29,10 +41,15 @@ conta2 = Conta(11, "Julia", 90, 2000)
 # conta.saca(20)
 # conta.extrato()
 
-conta.extrato()
-conta2.extrato()
+# conta.extrato()
+# conta2.extrato()
 
-conta.transfere(10, conta2)
+# conta.transfere(10, conta2)
 
-conta.extrato()
-conta2.extrato()
+# conta.extrato()
+# conta2.extrato()
+
+print(conta.get_saldo())
+print(conta.get_titular())
+conta.set_limite(5000)
+print(conta.get_limite())
