@@ -19,10 +19,12 @@ class Conta:
         self.saca(valor)
         destino.deposita(valor)
 
-    def get_saldo(self):
+    @property
+    def saldo(self):
         return self.__saldo
 
-    def get_titular(self):
+    @property
+    def titular(self):
         return self.__titular
 
     @property
@@ -51,7 +53,7 @@ conta2 = Conta(11, "Julia", 90, 2000)
 # conta.extrato()
 # conta2.extrato()
 
-print(conta.get_saldo())
-print(conta.get_titular())
+print(conta.saldo)
+print(conta.titular)
 conta.limite = 6000
 print(conta.limite)
