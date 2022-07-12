@@ -25,10 +25,12 @@ class Conta:
     def get_titular(self):
         return self.__titular
 
-    def get_limite(self):
+    @property
+    def limite(self):
         return self.__limite
 
-    def set_limite(self, limite):
+    @limite.setter
+    def limite(self, limite):
         self.__limite = limite
 
 
@@ -51,5 +53,5 @@ conta2 = Conta(11, "Julia", 90, 2000)
 
 print(conta.get_saldo())
 print(conta.get_titular())
-conta.set_limite(5000)
-print(conta.get_limite())
+conta.limite = 6000
+print(conta.limite)
