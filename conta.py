@@ -12,8 +12,14 @@ class Conta:
     def deposita(self, valor):
         self.__saldo += valor
 
+    def __pode_sacar(self, valor):
+        return valor <= self.saldo + self.limite
+
     def saca(self, valor):
-        self.__saldo -= valor
+        if (self.__pode_sacar(valor)):
+            self.__saldo -= valor
+        else:
+            print("Você não tem crédito pra sacar {} valor".format(valor))
 
     def transfere(self, valor, destino):
         self.saca(valor)
@@ -42,7 +48,7 @@ conta2 = Conta(11, "Julia", 90, 2000)
 # conta.extrato()
 # conta.deposita(10)
 # conta.extrato()
-# conta.saca(20)
+conta.saca(20)
 # conta.extrato()
 
 # conta.extrato()
@@ -50,10 +56,10 @@ conta2 = Conta(11, "Julia", 90, 2000)
 
 # conta.transfere(10, conta2)
 
-# conta.extrato()
+conta.extrato()
 # conta2.extrato()
 
-print(conta.saldo)
-print(conta.titular)
-conta.limite = 6000
-print(conta.limite)
+# print(conta.saldo)
+# print(conta.titular)
+# conta.limite = 6000
+# print(conta.limite)
