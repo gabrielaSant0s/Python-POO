@@ -1,3 +1,3 @@
 # Python-POO
 
-classe que implementa funcionalidades de uma conta de banco. Projeto com o objetivo de aprender Programação Orientada Objetos em python
+Classes em python com objetivo de estudar o funcionamento de Programação orientada objetos
