@@ -19,11 +19,17 @@ class Programas():
     def nome(self, nome):
         self._nome = nome
 
+    def __str__(self):
+        return f'Nome:{self._nome} - Ano:{self.ano} - Likes:{self._likes}'
+
 
 class Filme(Programas):
     def __init__(self, nome, ano, duracao):
         super().__init__(nome, ano)  # chama da classe mae
         self.duracao = duracao
+
+    def __str__(self):
+        return f'Nome:{self._nome} - Ano:{self.ano} - Likes:{self._likes} - Duração:{self.duracao}'
 
 
 class Serie(Programas):
@@ -31,9 +37,14 @@ class Serie(Programas):
         super().__init__(nome, ano)  # chama da classe mae
         self.temporadas = temporadas
 
+    def __str__(self):
+        return f'Nome:{self._nome} - Ano:{self.ano} - Likes:{self._likes} - Temporadas:{self.temporadas}'
+
 
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
-print(vingadores.nome)
-
 atlanta = Serie('atlanta', 2018, 2)
-print(f'Nome: {atlanta.nome} - Ano: {atlanta.ano}')
+
+lista = [vingadores, atlanta]
+
+for programa in lista:
+    print(programa)
