@@ -41,10 +41,28 @@ class Serie(Programas):
         return f'Nome:{self._nome} - Ano:{self.ano} - Likes:{self._likes} - Temporadas:{self.temporadas}'
 
 
+class Playlist():  # poderia herdar list mas como nao conhecemos tudo pode gerar um bug
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self._programas = programas  # array
+
+    @property
+    def listagem(self):
+        return self._programas
+
+    @property
+    def tamanho(self):
+        return len(self._programas)
+
+
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
 atlanta = Serie('atlanta', 2018, 2)
 
 lista = [vingadores, atlanta]
 
+playlist_fim_de_semana = Playlist("findi", lista)
+
 for programa in lista:
     print(programa)
+
+print(f'Tamanho: {playlist_fim_de_semana.tamanho}')
