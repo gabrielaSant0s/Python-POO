@@ -46,12 +46,10 @@ class Playlist():  # poderia herdar list mas como nao conhecemos tudo pode gerar
         self.nome = nome
         self._programas = programas  # array
 
-    @property
-    def listagem(self):
-        return self._programas
+    def __getitem__(self, item):  # deixa iteravel
+        return self._programas[item]
 
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
 
 
@@ -62,7 +60,7 @@ lista = [vingadores, atlanta]
 
 playlist_fim_de_semana = Playlist("findi", lista)
 
-for programa in lista:
+for programa in playlist_fim_de_semana:
     print(programa)
 
-print(f'Tamanho: {playlist_fim_de_semana.tamanho}')
+print(f'Tamanho: {len(playlist_fim_de_semana)}')
